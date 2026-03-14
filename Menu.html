@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEF3FF;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #E6E6E6;
+            width: 390px;
+            height: auto;
+            margin: auto;
+        }
+
+
+        .header-image {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 12px;
+            
+        }
+
+        .profile img {
+            width: 47px;
+            height: 47px;
+        }
+
+        .logo img {
+            height: 65px;
+        }
+
+        .form-input {
+            width: 325px;
+            font-size: 0.9rem;
+            background-color: #ffffff;
+            box-shadow: 3px 3px 10px rgba(143, 142, 142, 0.583);
+
+            padding: 13px 18px;
+            margin-bottom: 48px;
+            border-radius: 999px;
+
+            outline: none;
+            border: none;
+        }
+
+        .form-input:focus {
+            outline: 2px solid gray;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* =========================================================================================== */
+        /* HAMBURGER LIST */
+        /* =========================================================================================== */
+        .hamburger-image {}
+
+        .small-card {
+            background-color: #ffffff;
+            color: black;
+
+            width: 165px;
+            height: 225px;
+
+            margin: 10px 0;
+            padding-left: 5px;
+            border-radius: 12px;
+            box-shadow: 5px 5px 12px rgb(96, 95, 95);
+
+            text-decoration: none;
+        }
+
+        .small-card:hover{
+            border: 3px solid #0055ff;
+            box-shadow: 0px 0px 12px #0055ff;
+        }
+
+
+        .menu{
+            margin: 0 10px;
+            padding-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat( 2,1fr);
+            justify-items: center; /* จัดกลางแนวนอน */
+            align-items: center;
+            
+        }
+
+        .image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-hamburger {
+            width: 155px;
+            height: 117px;
+            margin: 13px;
+        }
+
+        .menu-title {
+            margin: 0;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        span {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .menu-description {
+            font-size: 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="status-bar">
+                <img src="photo/Status Bar.png" alt="Photo">
+            </div>
+
+            <div class="header-image">
+                <div class="logo">
+                    <img src="photo/LOGO.png" alt="Photo">
+                </div>
+
+                <div class="profile">
+                    <img src="photo/Ellipse 9.png" alt="Photo">
+                </div>
+            </div>
+
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="fsearch" name="fsearch" placeholder="Search" class="form-input">
+                </div>
+            </form>
+
+
+
+            <div class="menu">
+                 <a href="" class="small-card">
+                    <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                    <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-6.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-7.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-8.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-9.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-1.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-2.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-3.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-4.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+                <a href="" class="small-card">
+                     <div class="image">
+                    <img class="image-hamburger" src="Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-5.png" alt="">
+                    </div>
+                    <article>
+                        <p class="menu-title">Classic Garden Whopper</p>
+                        <span>189</span>
+                        <p class="menu-description">เน้นความสดใหม่ของผักและเนื้อ</p>
+                    </article>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
