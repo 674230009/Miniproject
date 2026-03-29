@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Kanit", sans-serif;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #c4c4c4;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 390px;
+            height: 844px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        .card {
+            margin: 0 20px;
+        }
+
+        .head {
+            text-align: center;
+        }
+
+        .chat-container {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-box-left,
+        .chat-box-right {
+            padding: 0 15px;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        .chat-box-left {
+            background-color: #ffac26;
+        }
+
+        .chat-box-right {
+            background-color: #c4c4c4;
+        }
+
+        .chat-input-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            border-top: 2px solid #7a7a7a;
+            box-sizing: border-box;
+        }
+
+        .chat-input {
+            flex: 1;
+            background-color: #d1d1d1;
+            border: none;
+            border-radius: 25px; 
+            padding: 12px 20px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .send-btn {
+            border: none;
+            margin: 0 10px;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="photo/Icon/Status Bar.png" alt="status bar">
+        </div>
+        <div class="card">
+            <a href=""><img src="photo/Icon/Undo.png" alt="undo"></a>
+        </div>
+        <div style="box-shadow: 0 1px rgba(0, 0, 0, 0.3);">
+            <h2 class="head">ติดต่อ</h2>
+        </div>
+        <div class="chat-container">
+            <div class="chat">
+                <div>
+                    <img src="photo/Ellipse 5.png" alt="profile picture">
+                </div>
+                <div class="chat-box-left">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur.
+                        Nulla feugiat lectus quis accumsan suspendisse
+                        vitae hendrerit.
+                    </p>
+                </div>
+            </div>
+            <div class="chat">
+                <div class="chat-box-right">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur.
+                        Nulla feugiat lectus quis accumsan suspendisse
+                        vitae hendrerit.
+                    </p>
+                </div>
+                <div>
+                    <img src="photo/Ellipse 4.png" alt="profile picture">
+                </div>
+            </div>
+            <div class="chat">
+                <div>
+                    <img src="photo/Ellipse 5.png" alt="profile picture">
+                </div>
+                <div class="chat-box-left">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input">
+                <button class="send-btn">
+                    <img src="photo/Icon/Rectangle 22.png" alt="send">
+                </button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
