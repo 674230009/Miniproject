@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Burger App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .app-container {
+            width: 390px;
+            height: 844px;
+            background-color: #FFFDF4;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .status-icons i {
+            margin-left: 4px;
+        }
+
+        /* ========== Header ========== */
+        .header {
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .btn-back {
+            display: flex;
+            justify-content: start;
+            font-size: 22px;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn-back:hover {
+            transform: translateX(-5px) scale(1.1); /* เลื่อนไปทางซ้ายนิดๆ เหมือนบอกว่ากลับไป */
+            color: #FF7B00;
+        }
+
+
+        .title-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -10px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* ========== Content ========== */
+        .content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .section-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* ========== Buyin-list ========== */
+        .order-card {
+            background-color: #2A2A2A;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .order-item img {
+            width: 80px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .item-details h3 {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .item-details .price {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .item-details .qty-row {
+            margin-top: 4px;
+            font-size: 14px;
+        }
+
+        .qty-num { color: #fff; margin-right: 5px; }
+        .qty-label { color: #00FF1A; font-weight: 500; }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 10px 0 15px;
+        }
+
+        .more-link {
+            display: block;
+            text-align: center;
+            color: #FF8A00;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .more-link:hover {
+            bottom: 0;
+            color: #FF8A00;
+            padding-top: 200px;
+            transform: translateY(3px);
+        }
+
+        /* ================ Bottom Bar ================ */
+        .btn-bar {
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            padding: 16px;
+            
+            color: white;
+            background-color: #FF7B00;
+            box-shadow: 0 4px 15px rgba(255, 123, 0, 0.3);
+            border: none;
+            border-radius: 12px;
+            
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .confirm-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 123, 0, 0.4);
+            background-color: #ff8c1a;
+        }
+
+        .confirm-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ================ Footer ================ */
+        footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-nav {
+            position: fixed;
+            bottom: 0;
+            width: 390px;
+            background-color: #6b422a;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: #ffffff;
+            font-size: 28px;
+            text-decoration: none;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.6));
+            transition: all 0.2s ease;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .nav-item:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="status-bar">
+                <img src="photo/Status Bar.png" alt="Photo">
+            </div>
+        <div class="header">
+            <a href="main-manu.html" class="btn-back"><i class="fas fa-undo-alt"></i></a>
+            <div class="title-container">
+                <h1 class="page-title">คำสั่งซื้อ</h1>
+            </div>
+        </div>
+
+        <div class="content">
+            <span class="section-label">รายการสั่งซื้อ</span>
+
+            <div class="order-card">
+                <div class="order-item">
+                    <img src="photo/Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-1.png" alt="Burger">
+                    <div class="item-details">
+                        <h3>Crispy Gold Chicken</h3>
+                        <p class="price">179.-</p>
+                        <div class="qty-row">
+                            <span class="qty-num">1</span>
+                            <span class="qty-label">รายการ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="order-item">
+                    <img src="photo/Drink/burger1-6.png" alt="Drink">
+                    <div class="item-details">
+                        <h3>Fanta strawberry</h3> <p class="price">179.-</p>
+                        <div class="qty-row">
+                            <span class="qty-label">รายการ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="more-link">รายการเพิ่มเติม...</a>
+            </div>
+        </div>
+        <div class="btn-bar">
+            <a href="payment.html" class="confirm-btn">Confirm</a>
+        </div>
+
+<!-- ==================== Footer ==================== -->
+    <footer>
+        <nav class="btn-nav">
+            <!-- =========== nav =========== -->
+            <a href="main-manu.html" class="nav-item"><i class="fas fa-home"></i></a>
+            <a href="promotion.html" class="nav-item"><i class="fas fa-ticket-alt"></i></a> 
+            <a href="favorites.html" class="nav-item"><i class="fas fa-heart"></i></a>
+            <a href="#" class="nav-item"><i class="fas fa-comments"></i></a>
+        </nav>
+    </footer>
+    </div>
+
+</body>
+</html>
