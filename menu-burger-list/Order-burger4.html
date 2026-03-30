@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-burger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Kanit", sans-serif;
+        }
+
+        body {
+            background-color: #434343;
+            display: flex;
+            justify-content: center;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+
+        .app-wrapper {
+            width: 390px;
+            height: 844px;
+            background-color: #FFFDF4;
+            position: relative;
+            padding-bottom: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* ================ Header ================ */
+        .header {
+            padding: 20px;
+            padding-top: 40px;
+        }
+
+        .btn-back {
+            font-size: 22px;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn-back:hover {
+            transform: translateX(-5px) scale(1.1); /* เลื่อนไปทางซ้ายนิดๆ เหมือนบอกว่ากลับไป */
+            color: #FF7B00;
+        }
+
+        /* ================ Hero Image ================ */
+        .hero-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 300px;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(0 15px 15px rgba(0,0,0,0.15)); /* เพิ่มเงาให้เบอร์เกอร์ดูมีมิติ */
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05) translateY(-5px); /* เบอร์เกอร์ลอยขึ้นนิดๆ ตอนเอาเมาส์ชี้ */
+        }
+
+        /* ================ Product Info ================ */
+        .product-info {
+            padding: 20px;
+        }
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .title-row h1 {
+            font-size: 26px;
+            color: #1A1A1A;
+            font-weight: 600;
+        }
+
+        .fav-btn {
+            font-size: 24px;
+            color: #1A1A1A;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .fav-btn:hover {
+            color: #f74040;
+            transform: scale(1.2);
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #797979;
+            margin-bottom: 10px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .rating-row i {
+            color: #FFB800;
+            margin-right: 5px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* ================ Portion & Quantity ================ */
+        .portion-container {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .portion-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #888;
+            margin-bottom: 8px;
+            margin-right: 30px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            background-color: #FF3333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 2px 4px 8px rgba(255, 51, 51, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .qty-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 2px 6px 12px rgba(255, 51, 51, 0.4);
+            background-color: #ff1a1a;
+        }
+
+        .qty-btn:active {
+            transform: scale(0.9);
+        }
+
+        .qty-number {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ================ Bottom Bar ================ */
+        .btn-bar {
+            display: flex;
+            justify-content: end;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .order-btn {
+            width: 60%;
+            padding: 16px;
+            
+            color: white;
+            background-color: #FF7B00;
+            box-shadow: 0 4px 15px rgba(255, 123, 0, 0.3);
+            border: none;
+            border-radius: 12px;
+            
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 123, 0, 0.4);
+            background-color: #ff8c1a;
+        }
+
+        .order-btn:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <div class="header">
+            <a href="../menu-burger.html" class="btn-back"><i class="fas fa-undo-alt"></i></a>
+        </div>
+
+        <div class="hero-image">
+            <img src="../photo/Hamburger/Screenshot_2026-03-04_150659-removebg-preview 2-4.png" alt="The Combo Feast">
+        </div>
+
+        <div class="product-info">
+            <div class="title-row">
+                <h1>The Combo Feast</h1>
+                <i class="far fa-heart fav-btn"></i>
+            </div>
+            
+            <div class="price">179.-</div>
+            
+            <div class="rating-row">
+                <i class="fas fa-star"></i>
+                <span>5.0 - 14 mins</span>
+            </div>
+
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur. Orci orci ullamcorper nisi eu nisl sit. Amet quis et quam donec faucibus est feugiat sed.
+            </p>
+
+            <div class="portion-container">
+                <span class="portion-label">Portion</span>
+                <div class="quantity-controls">
+                    <button class="qty-btn"><i class="fas fa-minus"></i></button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-bar">
+            <a href="" class="order-btn">ORDER NOW</a>
+        </div>
+    </div>
+
+</body>
